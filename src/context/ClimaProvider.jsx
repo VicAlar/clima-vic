@@ -21,13 +21,15 @@ const ClimaProvider = ({children}) => {
     const consultarClima = async datos => {
         try {
             const { ciudad } = datos
-            const url = `https://api.opencagedata.com/geocode/v1/json?q=${ciudad}&key=8011702be68c4eefa6375e8aa65ead8d`
+            const appKey = import.meta.env.VITE_API_KEY
+            const url = `https://api.opencagedata.com/geocode/v1/json?q=${ciudad}&key=${appKey}`
             const { data } = await axios(url)
             const { lat, lng } = data.results[0].geometry
 
             setResultado(data.results[0])
-            
-            const urlClima = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=1119f7f3c0fa764caacf49d838c356c0`
+
+            const appId = import.meta.env.VITE_API_KEY_2
+            const urlClima = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&appid=${appId}`
             
             const { data: clima } = await axios(urlClima)
             setResultadoDos(clima)
