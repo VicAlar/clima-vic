@@ -1,4 +1,5 @@
 import Busqueda from "./Busqueda"
+import Clima from "./Clima"
 
 const AppClima = () => {
   return (
@@ -9,6 +10,7 @@ const AppClima = () => {
             >Empieza buscando una ciudad del mundo:</h1>
         </header>
         <Busqueda />
+        <Clima />
     </>
   )
 }
