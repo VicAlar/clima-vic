@@ -1,10 +1,13 @@
-import { useState } from 'react'
 import './index.css'
+import AppClima from './components/AppClima'
+import { ClimaProvider } from './context/ClimaProvider'
 
 function App() {
 
   return (
-    <div>App Clima</div>
+    <ClimaProvider>
+      <AppClima />
+    </ClimaProvider>
   )
 }
 
