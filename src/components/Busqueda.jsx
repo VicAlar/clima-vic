@@ -22,7 +22,7 @@ const Busqueda = () => {
 
   return (
     <form
-      className="items-center px-4 flex justify-center mt-6"
+      className="items-center px-4 flex justify-center mt-6 w-full"
       onSubmit={handleSubmit}
     >
 
@@ -32,7 +32,7 @@ const Busqueda = () => {
         </div>
         <input
           type="text"
-          className={`block p-2 pl-10 w-96 text-white text-xl bg-transparent rounded-lg border ${alerta ? "border-red-600 placeholder:text-red-200" : "border-white placeholder:text-gray-200"} outline-none`}
+          className={`block p-2 pl-10 w-full md:w-96 text-white text-xl bg-transparent rounded-lg border ${alerta ? "border-red-600 placeholder:text-red-200" : "border-white placeholder:text-gray-200"} outline-none`}
           placeholder="Ej: Caracas, Venezuela"
           name="ciudad"
           id="ciudad"
