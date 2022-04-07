@@ -44,8 +44,8 @@ const Clima = () => {
                 {components.country.charAt(0).toUpperCase() +
                   components.country.slice(1)}
               </p>
-              <p className="md:text-lg text-md">{`${diaFormat} ${date} de ${mesFormat}`}</p>
-              <p className="md:text-lg text-md">Hora: {`${hora}:${min}`}</p>
+              <p className="md:text-lg text-sm">{`${diaFormat} ${date} de ${mesFormat}`}</p>
+              <p className="md:text-lg text-sm">Hora: {`${hora}:${min}`}</p>
             </div>
           </div>
           <div className="flex justify-evenly ml-8 md:p-4 p-6 text-lg">
