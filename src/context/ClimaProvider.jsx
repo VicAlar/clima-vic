@@ -10,6 +10,8 @@ const ClimaProvider = ({children}) => {
     })
     const [ resultado, setResultado ] = useState({})
     const [ resultadoDos, setResultadoDos ] = useState({})
+    const [ cargando, setCargando ] = useState(false)
+    const [ noResultado, setNoResultado ] = useState('')
 
     const datosBusqueda = e => {
         setBusqueda({
@@ -19,6 +21,8 @@ const ClimaProvider = ({children}) => {
     }
 
     const consultarClima = async datos => {
+        setNoResultado(false)
+        setCargando(true)
         try {
             const { ciudad } = datos
             const appKey = import.meta.env.VITE_API_KEY
@@ -35,7 +39,9 @@ const ClimaProvider = ({children}) => {
             setResultadoDos(clima)
         } catch (error) {
             console.log(error)
+            setNoResultado('No hay resultados para tu busqueda')
         }
+        setCargando(false)
     }
 
     return (
@@ -46,7 +52,9 @@ const ClimaProvider = ({children}) => {
                 datosBusqueda,
                 consultarClima,
                 resultado,
-                resultadoDos
+                resultadoDos,
+                cargando,
+                noResultado
             }}
         >
             {children}

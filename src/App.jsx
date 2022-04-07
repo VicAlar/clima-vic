@@ -6,7 +6,7 @@ function App() {
 
   return (
     <ClimaProvider>
-      <AppClima />
+         <AppClima />
     </ClimaProvider>
   )
 }

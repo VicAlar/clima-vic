@@ -13,7 +13,7 @@ const Busqueda = () => {
     e.preventDefault();
 
     if (Object.values(busqueda).includes("")) {
-      setAlerta("Debe escribir el nombre de una ciudad");
+      setAlerta("Debe escribir escribir el nombre de una ciudad");
       return
     }
     setAlerta('');
@@ -25,20 +25,21 @@ const Busqueda = () => {
       className="items-center px-4 flex justify-center mt-6"
       onSubmit={handleSubmit}
     >
-      {alerta && <p>{alerta}</p>}
+
       <div className="relative mr-3">
         <div className="absolute top-3 left-3 items-center">
-          <BsSearch />
+          <BsSearch fill="#fff"/>
         </div>
         <input
           type="text"
-          className="block p-2 pl-10 w-96 text-black-900 text-xl bg-transparent rounded-lg border border-gray-500 outline-none"
+          className={`block p-2 pl-10 w-96 text-white text-xl bg-transparent rounded-lg border ${alerta ? "border-red-600 placeholder:text-red-200" : "border-white placeholder:text-gray-200"} outline-none`}
           placeholder="Ej: Caracas, Venezuela"
           name="ciudad"
           id="ciudad"
           onChange={datosBusqueda}
           value={ciudad}
         />
+        {alerta && <p className="text-xs text-red-200 ml-3">{alerta}</p>}
       </div>
     </form>
   );
