@@ -35,8 +35,8 @@ const Clima = () => {
             />
             <div className="text-black">
               <p className="md:text-5xl text-2xl mb-3">{parseInt(main.temp - kelvin)} °C</p>
-              <p className="md:text-lg text-md">Humedad: {main.humidity}%</p>
-              <p className="md:text-lg text-md">Viento: {wind.speed}km/h</p>
+              <p className="md:text-lg text-sm">Humedad: {main.humidity}%</p>
+              <p className="md:text-lg text-sm">Viento: {wind.speed}km/h</p>
             </div>
             <div className="text-black">
               <p className="text-xl md:text-3xl md:mb-7 mb-3">
@@ -54,7 +54,7 @@ const Clima = () => {
                 <FaTemperatureHigh size="lg" />
               </div>
               <div>
-                <p className="md:text-2xl text-lg">Temperatura Maxima:</p>
+                <p className="md:text-2xl text-md">Temperatura Maxima:</p>
                 <p className="font-bold md:text-2xl text-xl">
                   {parseInt(main.temp_max - kelvin)}°C
                 </p>
@@ -65,7 +65,7 @@ const Clima = () => {
                 <FaTemperatureLow size="lg" />
               </div>
               <div>
-                <p className="md:text-2xl text-lg">Temperatura Minima:</p>
+                <p className="md:text-2xl text-md">Temperatura Minima:</p>
                 <p className="font-bold md:text-2xl text-xl">
                   {parseInt(main.temp_min - kelvin)}°C
                 </p>
