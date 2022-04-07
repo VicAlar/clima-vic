@@ -26,36 +26,36 @@ const Clima = () => {
   const kelvin = 273.15;
 
   return (
-        <div className="container bg-t-white rounded-lg mx-auto mt-24 z-0 w-3/4 p-6">
-          <div className="flex justify-around z-20 p-5">
+        <div className="container bg-t-white rounded-lg mx-auto mt-32 md:mt-24 z-0 w-10/12 md:w-3/4 pt-3 md:p-6">
+          <div className="flex justify-between md:justify-around z-20 p-3 md:p-5 text-center">
             <img
               className="hover:animate-bounce ease-in"
               src={`http://openweathermap.org/img/w/${weather[0].icon}.png`}
               alt=""
             />
             <div className="text-black">
-              <p className="text-5xl mb-3">{parseInt(main.temp - kelvin)} °C</p>
-              <p className="text-lg">Humedad: {main.humidity}%</p>
-              <p className="text-lg">Viento: {wind.speed}km/h</p>
+              <p className="md:text-5xl text-2xl mb-3">{parseInt(main.temp - kelvin)} °C</p>
+              <p className="md:text-lg text-md">Humedad: {main.humidity}%</p>
+              <p className="md:text-lg text-md">Viento: {wind.speed}km/h</p>
             </div>
             <div className="text-black">
-              <p className="text-3xl mb-7">
+              <p className="text-xl md:text-3xl md:mb-7 mb-3">
                 {components.city},{" "}
                 {components.country.charAt(0).toUpperCase() +
                   components.country.slice(1)}
               </p>
-              <p className="text-lg">{`${diaFormat} ${date} de ${mesFormat}`}</p>
-              <p className="text-lg">Hora: {`${hora}:${min}`}</p>
+              <p className="md:text-lg text-md">{`${diaFormat} ${date} de ${mesFormat}`}</p>
+              <p className="md:text-lg text-md">Hora: {`${hora}:${min}`}</p>
             </div>
           </div>
-          <div className="flex justify-evenly p-4 text-lg">
+          <div className="flex justify-evenly ml-8 md:p-4 p-6 text-lg">
             <div className="flex">
               <div className="w-9 mr-3">
                 <FaTemperatureHigh size="lg" />
               </div>
               <div>
-                <p>Temperatura Maxima:</p>
-                <p className="font-bold text-2xl">
+                <p className="md:text-2xl text-lg">Temperatura Maxima:</p>
+                <p className="font-bold md:text-2xl text-xl">
                   {parseInt(main.temp_max - kelvin)}°C
                 </p>
               </div>
@@ -65,8 +65,8 @@ const Clima = () => {
                 <FaTemperatureLow size="lg" />
               </div>
               <div>
-                <p>Temperatura Minima:</p>
-                <p className="font-bold text-2xl">
+                <p className="md:text-2xl text-lg">Temperatura Minima:</p>
+                <p className="font-bold md:text-2xl text-xl">
                   {parseInt(main.temp_min - kelvin)}°C
                 </p>
               </div>

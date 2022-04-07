@@ -10,7 +10,7 @@ const AppClima = () => {
     <div className="h-screen w-screen overflow-hidden bg-image bg-center bg-cover">
       <div className="bg-black/[0.4] h-screen w-screen overflow-hidden ">
         <header>
-          <h1 className="text-2xl text-center font-bold font-raleway mt-6 text-white">
+          <h1 className="text-xl md:text-2xl text-center font-bold font-raleway mt-6 text-white">
             Empieza buscando una ciudad del mundo:
           </h1>
         </header>
