@@ -7,19 +7,20 @@ const AppClima = () => {
   const { resultadoDos, cargando, noResultado } = useClima();
 
   return (
-    <div className="h-screen w-screen overflow-hidden bg-image bg-center bg-cover">
-      <div className="bg-black/[0.4] h-screen w-screen overflow-hidden ">
-        <header>
-          <h1 className="text-xl md:text-2xl text-center font-bold font-raleway mt-6 text-white">
-            Empieza buscando una ciudad del mundo:
-          </h1>
-        </header>
-        <div className="z-90">
-          <Busqueda />
-          {cargando ? (
+    <>
+      <div className="h-screen w-screen overflow-hidden bg-image bg-center bg-cover">
+        <div className="bg-black/[0.4] h-screen w-screen overflow-hidden ">
+          <header>
+            <h1 className="text-xl md:text-2xl text-center font-bold font-raleway mt-6 text-white">
+              Empieza buscando una ciudad del mundo:
+            </h1>
+          </header>
+          <div className="z-90">
+            <Busqueda />
+            {cargando ? (
               <Loading />
             ) : resultadoDos?.name ? (
-                <Clima /> 
+              <Clima />
             ) : noResultado ? (
               <div className="container bg-t-white rounded-lg mx-auto mt-24 z-0 w-3/4 p-6 text-2xl text-black font-raleway text-center leading-10">
                 <p className="">{noResultado}.</p>
@@ -27,10 +28,13 @@ const AppClima = () => {
                 <p className="text-3xl mt-3 font-bold">"Ciudad, Pais"</p>
               </div>
             ) : null}
-         
+          </div>
+          <footer className="h-screen text-center relative">
+            <p className="align-text-bottom text-white absolute inset-x-0 bottom-64 text-xl">Hecho con ♡ por Victor Alarcon</p>
+          </footer>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
